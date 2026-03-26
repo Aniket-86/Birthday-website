@@ -1,0 +1,128 @@
+:root {
+    --bg-pink: #fff0f3;
+    --main-pink: #ff758f;
+    --dark-pink: #c9184a;
+    --accent-pink: #ffb3c1;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-pink);
+    color: var(--dark-pink);
+    overflow-x: hidden; /* Prevents side-scrolling */
+}
+
+/* Mobile Hero Section */
+.hero {
+    height: 80vh; /* Taller for mobile impact */
+    background: linear-gradient(rgba(255,117,143,0.6), rgba(201,24,74,0.7)), 
+                url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem; /* Adjusted for phone screens */
+    color: white;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Horizontal Scrolling Wishes */
+.wish-scroll {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wish-card {
+    flex: 0 0 80%; /* Cards take up 80% of screen width */
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255,117,143,0.2);
+    scroll-snap-align: center;
+    text-align: center;
+    font-style: italic;
+    border: 1px solid var(--accent-pink);
+}
+
+/* Portrait Gallery */
+.gallery {
+    padding: 20px;
+}
+
+.gallery h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.mobile-grid {
+    display: flex;
+    flex-direction: column; /* Stack images vertically on mobile */
+    gap: 15px;
+}
+
+.mobile-grid img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Video Section */
+.video-container {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.video-box {
+    position: relative;
+    padding-bottom: 177%; /* Vertical video ratio (9:16) - change to 56.25% for horizontal */
+    height: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    padding: 30px;
+    background: var(--main-pink);
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
